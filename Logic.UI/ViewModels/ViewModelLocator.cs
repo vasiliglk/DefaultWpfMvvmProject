@@ -41,11 +41,12 @@ namespace Logic.UI.ViewModels
             ////    // Create run time view services and models
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
-
+            SimpleIoc.Default.Register<DefaultMainViewModel>();
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<IDataService, DataService>();
         }
 
+        public DefaultMainViewModel DefaultMain => ServiceLocator.Current.GetInstance<DefaultMainViewModel>();
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
 
         public static void Cleanup()
